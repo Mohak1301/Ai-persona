@@ -35,6 +35,63 @@ const MessageBubble = ({ text, sender, persona, timestamp }) => {
     });
   };
 
+  const renderMessageContent = () => {
+    // Check if message is a GIF format: [GIF: title](url)
+    const gifRegex = /^\[GIF: ([^\]]+)\]\(([^)]+)\)$/;
+    const gifMatch = text.match(gifRegex);
+    
+    if (gifMatch && isUser) {
+      const [, title, url] = gifMatch;
+      return (
+        <div className="gif-message">
+          <img 
+            src={url} 
+            alt={title} 
+            className="gif-content"
+            onError={(e) => {
+              e.target.style.display = 'none';
+              e.target.nextSibling.style.display = 'block';
+            }}
+          />
+          <div className="gif-fallback" style={{ display: 'none' }}>
+            GIF: {title}
+          </div>
+        </div>
+      );
+    }
+    
+    // Regular text rendering
+    if (isUser) {
+      return text;
+    } else {
+      return (
+        <ReactMarkdown
+          components={{
+            code: ({ node, inline, className, children, ...props }) => {
+              const match = /language-(\w+)/.exec(className || '');
+              return !inline && match ? (
+                <SyntaxHighlighter
+                  style={tomorrow}
+                  language={match[1]}
+                  PreTag="div"
+                  {...props}
+                >
+                  {String(children).replace(/\n$/, '')}
+                </SyntaxHighlighter>
+              ) : (
+                <code className={className} {...props}>
+                  {children}
+                </code>
+              );
+            }
+          }}
+        >
+          {text}
+        </ReactMarkdown>
+      );
+    }
+  };
+
   return (
     <div className={`message-container ${isUser ? 'user' : `assistant ${persona}`}`}>
       {!isUser && (
@@ -59,33 +116,7 @@ const MessageBubble = ({ text, sender, persona, timestamp }) => {
         </div>
         <div className="message-bubble">
           <div className="message-content">
-            {isUser ? (
-              text
-            ) : (
-              <ReactMarkdown
-                components={{
-                  code: ({ node, inline, className, children, ...props }) => {
-                    const match = /language-(\w+)/.exec(className || '');
-                    return !inline && match ? (
-                      <SyntaxHighlighter
-                        style={tomorrow}
-                        language={match[1]}
-                        PreTag="div"
-                        {...props}
-                      >
-                        {String(children).replace(/\n$/, '')}
-                      </SyntaxHighlighter>
-                    ) : (
-                      <code className={className} {...props}>
-                        {children}
-                      </code>
-                    );
-                  }
-                }}
-              >
-                {text}
-              </ReactMarkdown>
-            )}
+            {renderMessageContent()}
           </div>
         </div>
       </div>
