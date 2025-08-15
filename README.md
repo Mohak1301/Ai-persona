@@ -27,10 +27,17 @@ cd backend
 cp env.example .env
 ```
 
-4. Add your Google Gemini API key to the `.env` file
+4. Set up environment variables
+
+**Backend (.env):**
 ```env
 GEMINI_API_KEY=your_gemini_api_key_here
 OPENAI_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+```
+
+**Frontend (.env):**
+```env
+REACT_APP_API_URL=http://localhost:5000
 ```
 
 5. Start the application

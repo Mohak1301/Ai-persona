@@ -1,6 +1,6 @@
 .landing-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #fff5f0 0%, #ffe8d6 25%, #ffd4b3 50%, #ffc085 75%, #ffa94d 100%);
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #2d2d2d 50%, #1e3a8a 75%, #3b82f6 100%);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -15,9 +15,9 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 159, 67, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(255, 193, 7, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(96, 165, 250, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(147, 197, 253, 0.05) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -27,12 +27,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 3rem;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(15px);
-  border-bottom: 2px solid rgba(255, 107, 53, 0.1);
+  border-bottom: 2px solid rgba(59, 130, 246, 0.2);
   position: relative;
   z-index: 10;
-  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.1);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
 }
 
 .central-floating-emoji {
@@ -42,7 +42,7 @@
   transform: translate(-50%, -50%);
   font-size: 3.5rem;
   animation: logoFloat 3s ease-in-out infinite;
-  filter: drop-shadow(0 4px 8px rgba(255, 107, 53, 0.3));
+  filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.5));
   z-index: 5;
 }
 
@@ -77,12 +77,12 @@
 .brand-name {
   font-size: 1.8rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #ff6b35, #ff8c42, #ffa94d);
+  background: linear-gradient(135deg, #3b82f6, #60a5fa, #93c5fd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-decoration: none;
-  text-shadow: 0 2px 4px rgba(255, 107, 53, 0.1);
+  text-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
 }
 
 @keyframes logoFloat {
@@ -241,14 +241,14 @@
 .hero-heading {
   font-size: 3.5rem;
   font-weight: 700;
-  color: #2d3748;
+  color: #f8fafc;
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .highlight {
-  background: linear-gradient(135deg, #ff6b35, #ff8c42);
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -257,7 +257,7 @@
 
 .hero-description {
   font-size: 1.3rem;
-  color: #4a5568;
+  color: #cbd5e1;
   line-height: 1.7;
   margin-bottom: 3rem;
   font-weight: 500;
@@ -283,14 +283,14 @@
 .mentor-selection-section .mentor-label {
   font-size: 1rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #ff6b35, #ff8c42);
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 1rem;
-  text-shadow: 0 1px 2px rgba(255, 107, 53, 0.1);
+  text-shadow: 0 1px 2px rgba(59, 130, 246, 0.3);
 }
 
 .mentor-selection-section .mentor-cards {
@@ -307,12 +307,12 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 1.5rem 2rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 248, 240, 0.95));
-  border: 2px solid rgba(255, 107, 53, 0.2);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(30, 58, 138, 0.3));
+  border: 2px solid rgba(59, 130, 246, 0.3);
   border-radius: 16px;
   cursor: pointer;
   transition: all 0.4s ease;
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.1);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
   width: 100%;
   position: relative;
   backdrop-filter: blur(10px);
@@ -320,9 +320,9 @@
 
 .mentor-selection-section .mentor-card:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.2);
-  border-color: #ff6b35;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 248, 240, 1));
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+  border-color: #3b82f6;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(30, 58, 138, 0.5));
 }
 
 .mentor-selection-section .mentor-info {
@@ -334,12 +334,12 @@
 .mentor-selection-section .mentor-name {
   font-size: 1rem;
   font-weight: 600;
-  color: #333;
+  color: #f8fafc;
 }
 
 .mentor-selection-section .mentor-role {
   font-size: 0.8rem;
-  color: #666;
+  color: #cbd5e1;
 }
 
 .mentor-selection-section .mentor-avatar {
@@ -348,7 +348,7 @@
   height: 50px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid rgba(255, 102, 0, 0.2);
+  border: 2px solid rgba(59, 130, 246, 0.4);
   flex-shrink: 0;
 }
 
