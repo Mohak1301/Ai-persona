@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import LandingPage from './components/LandingPage';
 import PersonaSelector from './components/PersonaSelector';
@@ -14,6 +14,13 @@ function App() {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [showChat, setShowChat] = useState(false);
+
+  // Clean URL hash fragments on component mount
+  useEffect(() => {
+    if (window.location.hash) {
+      window.history.replaceState(null, null, window.location.pathname);
+    }
+  }, []);
 
   const getDefaultMessage = (persona) => {
     if (persona === 'hitesh') {
@@ -53,7 +60,8 @@ function App() {
         content: msg.text
       }));
 
-      const response = await axios.post('http://localhost:5000/chat', {
+      const apiUrl = process.env.REACT_APP_API_URL;
+      const response = await axios.post(`${apiUrl}/chat`, {
         persona: activePersona,
         message: message,
         history: history
