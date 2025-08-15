@@ -1,0 +1,502 @@
+.landing-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff5f0 0%, #ffe8d6 25%, #ffd4b3 50%, #ffc085 75%, #ffa94d 100%);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.landing-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 159, 67, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 193, 7, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-bottom: 2px solid rgba(255, 107, 53, 0.1);
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.1);
+}
+
+.central-floating-emoji {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  font-size: 3.5rem;
+  animation: logoFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(255, 107, 53, 0.3));
+  z-index: 5;
+}
+
+.nav-brand {
+  flex: 1;
+  z-index: 10;
+}
+
+.nav-menu {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 10;
+}
+
+.nav-brand {
+  flex: 1;
+}
+
+.animated-logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.animated-logo:hover {
+  transform: scale(1.05);
+}
+
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff6b35, #ff8c42, #ffa94d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+  text-shadow: 0 2px 4px rgba(255, 107, 53, 0.1);
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(5deg); }
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.mentor-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mentor-label {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mentor-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.mentor-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(255, 102, 0, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  min-width: 140px;
+}
+
+.mentor-card:hover {
+  background: rgba(255, 102, 0, 0.05);
+  border-color: #ff6600;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.15);
+}
+
+.mentor-avatar {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 102, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.mentor-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.mentor-card:hover .mentor-profile-img {
+  transform: scale(1.1);
+}
+
+.mentor-emoji {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mentor-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.mentor-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.mentor-role {
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.chat-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 102, 0, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.mentor-card:hover .chat-indicator {
+  background: #ff6600;
+  transform: scale(1.1);
+}
+
+.chat-icon {
+  font-size: 0.8rem;
+  color: #ff6600;
+  transition: color 0.3s ease;
+}
+
+.mentor-card:hover .chat-icon {
+  color: white;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 4rem 3rem;
+  gap: 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Left Section */
+.content-left {
+  flex: 1;
+  max-width: 600px;
+  padding-right: 2rem;
+}
+
+.hero-section {
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-heading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.highlight {
+  background: linear-gradient(135deg, #ff6b35, #ff8c42);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+.hero-description {
+  font-size: 1.3rem;
+  color: #4a5568;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  font-weight: 500;
+}
+
+.cta-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Mentor Selection Section */
+.mentor-selection-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.mentor-selection-section .mentor-label {
+  font-size: 1rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff6b35, #ff8c42);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(255, 107, 53, 0.1);
+}
+
+.mentor-selection-section .mentor-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+}
+
+.mentor-selection-section .mentor-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 248, 240, 0.95));
+  border: 2px solid rgba(255, 107, 53, 0.2);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.1);
+  width: 100%;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.mentor-selection-section .mentor-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.2);
+  border-color: #ff6b35;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 248, 240, 1));
+}
+
+.mentor-selection-section .mentor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.mentor-selection-section .mentor-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.mentor-selection-section .mentor-role {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.mentor-selection-section .mentor-avatar {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 102, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.mentor-selection-section .mentor-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.mentor-selection-section .mentor-card:hover .mentor-profile-img {
+  transform: scale(1.1);
+}
+
+.mentor-selection-section .mentor-emoji {
+  font-size: 1.5rem;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Right Section */
+.content-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2rem;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .main-content {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2rem;
+  }
+  
+  .content-left {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .hero-heading {
+    font-size: 2.5rem;
+  }
+  
+  .content-right {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-brand {
+    flex: none;
+  }
+  
+  .nav-menu {
+    flex: none;
+  }
+  
+  .mentor-section {
+    gap: 0.4rem;
+  }
+  
+  .mentor-label {
+    font-size: 0.8rem;
+  }
+  
+  .mentor-icons {
+    gap: 0.5rem;
+  }
+  
+  .mentor-card {
+    padding: 0.5rem 0.8rem;
+    min-width: 120px;
+  }
+  
+  .mentor-avatar {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .mentor-name {
+    font-size: 0.85rem;
+  }
+  
+  .mentor-role {
+    font-size: 0.7rem;
+  }
+  
+  .chat-indicator {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .chat-icon {
+    font-size: 0.7rem;
+  }
+  
+  .hero-heading {
+    font-size: 2rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+  
+  .content-right {
+    height: 250px;
+  }
+  
+  .main-chat-bubble {
+    padding: 1rem 1.5rem;
+  }
+  
+  .avatar-circle {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .avatar-emoji {
+    font-size: 1.3rem;
+  }
+}

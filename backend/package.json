@@ -1,0 +1,26 @@
+{
+  "name": "chatml-persona-backend",
+  "version": "1.0.0",
+  "description": "LLM-powered persona chat backend with ChatML-style prompting",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.18.2",
+    "openai": "^4.20.1"
+  },
+  "keywords": [
+    "chat",
+    "llm",
+    "persona",
+    "openai",
+    "express"
+  ],
+  "author": "",
+  "license": "MIT"
+}

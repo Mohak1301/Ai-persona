@@ -1,0 +1,151 @@
+.typing-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.typing-container.assistant {
+  justify-content: flex-start;
+}
+
+.message-profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 102, 0, 0.2);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.message-profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-fallback {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff6600, #ff8c00);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.typing-content-wrapper {
+  flex: 1;
+  max-width: 70%;
+}
+
+.typing-bubble {
+  position: relative;
+  background: linear-gradient(135deg, #fff5f0, #fff);
+  border-left: 3px solid #ff6600;
+  padding: 0.8rem 1.2rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-bottom-left-radius: 4px;
+}
+
+.typing-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -8px;
+  width: 0;
+  height: 0;
+  border-right: 8px solid #fff5f0;
+  border-top: 8px solid transparent;
+}
+
+.typing-text {
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.typing-dots {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff6600;
+  animation: typingDot 1.4s infinite ease-in-out;
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingDot {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .typing-container {
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .message-profile-picture {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .typing-content-wrapper {
+    max-width: 80%;
+  }
+  
+  .typing-bubble {
+    padding: 0.7rem 1rem;
+  }
+  
+  .typing-text {
+    font-size: 0.85rem;
+  }
+  
+  .dot {
+    width: 5px;
+    height: 5px;
+  }
+}
