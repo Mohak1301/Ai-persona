@@ -107,6 +107,10 @@
   gap: 1rem;
 }
 
+.mobile-mentor-switcher {
+  display: none;
+}
+
 .back-btn {
   padding: 0.6rem 1.2rem;
   border: 2px solid rgba(59, 130, 246, 0.4);
@@ -156,19 +160,33 @@
 @media (max-width: 768px) {
   .persona-header {
     padding: 1rem;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     gap: 1rem;
+    /* Keep header compact on mobile */
+    min-height: auto;
   }
   
   .persona-info {
-    width: 100%;
-    justify-content: center;
+    flex: 1;
+    justify-content: flex-start;
+  }
+  
+  .persona-profile-section {
+    gap: 0.75rem;
+  }
+  
+  .mobile-mentor-switcher {
+    display: block;
+    order: -1; /* Place switcher first in the actions */
   }
   
   .header-actions {
-    width: 100%;
-    justify-content: center;
+    display: flex;
+    align-items: center;
     gap: 0.5rem;
+    flex-wrap: nowrap;
   }
   
   .persona-name {
@@ -178,6 +196,9 @@
   .back-btn, .clear-chat-btn {
     padding: 0.4rem 0.8rem;
     font-size: 0.8rem;
+    /* Better touch targets for mobile */
+    touch-action: manipulation;
+    border-radius: 6px;
   }
   
   .profile-picture {
@@ -189,6 +210,8 @@
     padding: 0.5rem 0.8rem;
     font-size: 0.85rem;
     min-width: 120px;
+    /* Better touch targets for mobile */
+    touch-action: manipulation;
   }
   
   .selector-profile {
@@ -198,10 +221,100 @@
   
   .dropdown-item {
     padding: 0.6rem 0.8rem;
+    /* Better touch targets for mobile */
+    touch-action: manipulation;
   }
   
   .dropdown-profile {
     width: 28px;
     height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .persona-header {
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+  
+  .persona-profile-section {
+    gap: 0.5rem;
+  }
+  
+  .persona-name {
+    font-size: 1.1rem;
+  }
+  
+  .status-text {
+    font-size: 0.75rem;
+  }
+  
+  .back-btn, .clear-chat-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+    min-height: 30px;
+  }
+  
+  .profile-picture {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .header-actions {
+    gap: 0.3rem;
+  }
+  
+  .mobile-mentor-switcher .mentor-selector-btn {
+    padding: 0.3rem 0.5rem;
+    height: 30px;
+  }
+  
+  .mobile-mentor-switcher .selector-profile {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .persona-header {
+    padding: 0.5rem;
+    gap: 0.4rem;
+  }
+  
+  .persona-name {
+    font-size: 1rem;
+  }
+  
+  .back-btn, .clear-chat-btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.65rem;
+    min-height: 28px;
+  }
+  
+  .profile-picture {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .persona-profile-section {
+    gap: 0.4rem;
+  }
+  
+  .status-text {
+    font-size: 0.7rem;
+  }
+  
+  .header-actions {
+    gap: 0.25rem;
+  }
+  
+  .mobile-mentor-switcher .mentor-selector-btn {
+    padding: 0.25rem 0.4rem;
+    height: 28px;
+  }
+  
+  .mobile-mentor-switcher .selector-profile {
+    width: 18px;
+    height: 18px;
   }
 }

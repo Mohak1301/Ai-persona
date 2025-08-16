@@ -62,6 +62,11 @@
 @media (max-width: 768px) {
   .chat-window {
     padding: 0.75rem;
+    /* Ensure proper height on mobile */
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   }
   
   .empty-chat {
@@ -71,5 +76,40 @@
   .empty-chat p {
     padding: 1.5rem;
     font-size: 1rem;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-window {
+    padding: 0.5rem;
+    /* Optimize scrollbar for mobile */
+  }
+  
+  .chat-window::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .empty-chat {
+    padding: 0.75rem;
+  }
+  
+  .empty-chat p {
+    padding: 1rem;
+    font-size: 0.95rem;
+    max-width: 250px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .chat-window {
+    padding: 0.375rem;
+  }
+  
+  .empty-chat p {
+    padding: 0.875rem;
+    font-size: 0.9rem;
+    max-width: 220px;
   }
 }

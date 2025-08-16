@@ -140,14 +140,73 @@
   
   .typing-bubble {
     padding: 0.7rem 1rem;
+    border-radius: 12px;
   }
   
   .typing-text {
     font-size: 0.85rem;
+    margin-bottom: 0.4rem;
   }
   
   .dot {
     width: 5px;
     height: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .typing-container {
+    gap: 0.4rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .message-profile-picture {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .typing-content-wrapper {
+    max-width: 85%;
+  }
+  
+  .typing-bubble {
+    padding: 0.6rem 0.9rem;
+    border-radius: 10px;
+  }
+  
+  .typing-text {
+    font-size: 0.8rem;
+    margin-bottom: 0.35rem;
+  }
+  
+  .dot {
+    width: 4px;
+    height: 4px;
+  }
+}
+
+@media (max-width: 360px) {
+  .typing-container {
+    gap: 0.35rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .message-profile-picture {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .typing-content-wrapper {
+    max-width: 90%;
+  }
+  
+  .typing-bubble {
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+  }
+  
+  .typing-text {
+    font-size: 0.75rem;
+    margin-bottom: 0.3rem;
   }
 }

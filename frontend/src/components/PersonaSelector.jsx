@@ -1,4 +1,5 @@
 import React from 'react';
+import MentorSwitcher from './MentorSwitcher';
 import '../styles/PersonaSelector.css';
 
 const PersonaSelector = ({ activePersona, onSelectPersona, messageCount, onClearChat, onBackToLanding }) => {
@@ -41,6 +42,12 @@ const PersonaSelector = ({ activePersona, onSelectPersona, messageCount, onClear
       </div>
       
       <div className="header-actions">
+        <div className="mobile-mentor-switcher">
+          <MentorSwitcher 
+            activePersona={activePersona} 
+            onSelectPersona={onSelectPersona} 
+          />
+        </div>
         <button className="back-btn" onClick={onBackToLanding}>
           ← Back
         </button>

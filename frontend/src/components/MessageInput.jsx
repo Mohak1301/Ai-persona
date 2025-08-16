@@ -67,10 +67,12 @@ const MessageInput = ({ onSend, activePersona, onSelectPersona, isLoading }) => 
     <>
       <div className="message-input-container">
         <form onSubmit={handleSubmit} className="message-input-form">
-          <MentorSwitcher 
-            activePersona={activePersona} 
-            onSelectPersona={onSelectPersona} 
-          />
+          <div className="desktop-mentor-switcher">
+            <MentorSwitcher 
+              activePersona={activePersona} 
+              onSelectPersona={onSelectPersona} 
+            />
+          </div>
           <div className="input-wrapper">
             <div className="input-container">
               <textarea

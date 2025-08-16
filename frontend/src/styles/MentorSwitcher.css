@@ -3,6 +3,32 @@
   flex-shrink: 0;
 }
 
+/* Mobile navbar variant - more compact */
+.mobile-mentor-switcher .mentor-switcher {
+  position: relative;
+}
+
+.mobile-mentor-switcher .mentor-selector-btn {
+  min-width: auto;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+  height: 36px;
+  border-radius: 6px;
+}
+
+.mobile-mentor-switcher .selector-profile {
+  width: 24px;
+  height: 24px;
+}
+
+.mobile-mentor-switcher .selector-name {
+  display: none; /* Hide name on mobile navbar to save space */
+}
+
+.mobile-mentor-switcher .selector-chevron {
+  font-size: 0.7rem;
+}
+
 .mentor-selector-btn {
   display: flex;
   align-items: center;
@@ -84,6 +110,17 @@
   overflow: hidden;
 }
 
+/* Mobile navbar dropdown - appears below button */
+.mobile-mentor-switcher .mentor-dropdown {
+  bottom: auto;
+  top: 100%;
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+  min-width: 200px;
+  left: auto;
+  right: 0;
+}
+
 .dropdown-item {
   display: flex;
   align-items: center;
@@ -160,6 +197,9 @@
     font-size: 0.85rem;
     min-width: 120px;
     height: 40px;
+    /* Better touch targets */
+    touch-action: manipulation;
+    border-radius: 6px;
   }
   
   .selector-profile {
@@ -169,10 +209,92 @@
   
   .dropdown-item {
     padding: 0.6rem 0.8rem;
+    /* Better touch targets */
+    touch-action: manipulation;
   }
   
   .dropdown-profile {
     width: 28px;
     height: 28px;
+  }
+  
+  .mentor-dropdown {
+    border-radius: 6px;
+    /* Improve mobile touch interaction */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media (max-width: 480px) {
+  .mentor-selector-btn {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.8rem;
+    min-width: 110px;
+    height: 38px;
+    gap: 0.6rem;
+  }
+  
+  .selector-profile {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .dropdown-item {
+    padding: 0.55rem 0.7rem;
+    gap: 0.6rem;
+  }
+  
+  .dropdown-profile {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .dropdown-name {
+    font-size: 0.85rem;
+  }
+  
+  .dropdown-role {
+    font-size: 0.7rem;
+  }
+  
+  .selector-chevron {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .mentor-selector-btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+    min-width: 100px;
+    height: 36px;
+    gap: 0.5rem;
+  }
+  
+  .selector-profile {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .dropdown-item {
+    padding: 0.5rem 0.6rem;
+    gap: 0.5rem;
+  }
+  
+  .dropdown-profile {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .dropdown-name {
+    font-size: 0.8rem;
+  }
+  
+  .dropdown-role {
+    font-size: 0.65rem;
+  }
+  
+  .selector-chevron {
+    font-size: 0.7rem;
   }
 }
